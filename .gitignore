@@ -50,6 +50,12 @@ logs/
 .env
 .env.local
 
+# Secrets
+*.pem
+*.key
+id_rsa
+id_ed25519
+
 # Ollama models
 ollama-models/
 *.bin

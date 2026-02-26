@@ -56,12 +56,16 @@ This document provides guidance for autonomous agent systems working on OllamaHp
   3. Performance benchmarks
   4. Model evaluation
 
-## Fixed Ports (VPN Required)
+## Fixed Ports (canonical mapping – align with GlobPretect/docs/AGENTS.md)
 
-| Port | Service | Model | Purpose |
-|------|---------|-------|---------|
-| 55077 | Ollama | granite4 | Agentic tasks |
-| 66044 | Ollama | qwen2.5-coder | Code generation |
+| Environment | granite | deepseek | qwen-coder | codellama |
+|-------------|---------|----------|------------|-----------|
+| **Debug (VPN)** | 55077 | 55088 | 66044 | 66033 |
+| **Testing +1 (macOS)** | 55177 | 55188 | 66144 | 66133 |
+| **Testing +2 (RockyLinux)** | 55277 | 55288 | 66244 | 66233 |
+| **Release +3** | 55377 | 55388 | 66344 | 66333 |
+
+**GitHub workflow actions:** Workflows that use **@granite**, **@deepseek**, **@qwen-coder**, or **@codellama** in comments or triggers must call the Ollama API on the port for that model (see table above for the environment in use).
 
 ## Container Base
 
